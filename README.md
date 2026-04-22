@@ -1,7 +1,11 @@
+```html
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tree Canada Demo</title>
+
 <style>
 *{
     margin:0;
@@ -232,6 +236,7 @@ a{
             <li onclick="filterCards('featured')">Featured</li>
             <li onclick="filterCards('programs')">Our Programs</li>
             <li onclick="filterCards('stories')">News & Stories</li>
+            <li onclick="showAllCards()">Show All</li>
         </ul>
     </aside>
 
@@ -277,6 +282,39 @@ function filterCards(category){
         }
     });
 }
+
+function showAllCards(){
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card=>{
+        card.style.display='block';
+    });
+}
+</script>
+
+<!-- Salesforce Embedded Messaging -->
+<script type='text/javascript'>
+    function initEmbeddedMessaging() {
+        try {
+            embeddedservice_bootstrap.settings.language = 'en_US';
+
+            embeddedservice_bootstrap.init(
+                '00DgL00000OQ3nd',
+                'Github_Messaging_Setting',
+                'https://saastrion-dev-ed.develop.my.site.com/ESWGithubMessagingSetti1776887653761',
+                {
+                    scrt2URL: 'https://saastrion-dev-ed.develop.my.salesforce-scrt.com'
+                }
+            );
+        } catch (err) {
+            console.error('Error loading Embedded Messaging: ', err);
+        }
+    };
+</script>
+
+<script 
+    type='text/javascript' 
+    src='https://saastrion-dev-ed.develop.my.site.com/ESWGithubMessagingSetti1776887653761/assets/js/bootstrap.min.js' 
+    onload='initEmbeddedMessaging()'>
 </script>
 
 </body>
